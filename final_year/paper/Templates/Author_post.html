@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="flex justify-center items-center min-h-screen bg-gray-100">
+    <div class="w-full max-w-md px-8 py-6 bg-white rounded-lg shadow-lg">
+        <h2 class="text-2xl font-bold mb-6 text-center text-blue-700">Add New Blog</h2>
+        <form action="" method="POST" class="grid gap-6">
+            {% csrf_token %}
+            <div>
+                <label for="title" class="block font-bold text-gray-700 mb-1">Title</label>
+                {{ form.title }}
+
+            </div>
+        <br>
+            <div>
+                <label for="content" class="block font-bold text-gray-700 mb-1">Description</label>
+                {{ form.content }}
+            </div>  <br>
+            <div>
+                <label for="published_date" class="block font-bold text-gray-700 mb-1">Published Date</label>
+                {{ form.publication_date }}
+            </div><br>
+            <div>
+                <label for="author" class="block font-bold text-gray-700 mb-1">Author</label>
+                {{ form.author }}
+            </div><br>
+            <div class="flex justify-end">
+                <button type="submit" class="px-6 py-2 bg-blue-700 text-white font-semibold rounded-md hover:bg-blue-800 transition-colors duration-300">Add Blog</button>
+            </div>
+        </form>
+    </div>
+</div>
+{% endblock %}

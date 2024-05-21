@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vlogs</title>
+    <style>
+        body {
+            background-color: #f0f0f0; 
+            color: #333; 
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+        nav {
+            background-color: #0066cc; 
+            padding: 15px 30px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+        nav a {
+            color: #fff; 
+            text-decoration: none;
+            font-weight: bold;
+            transition: color 0.3s ease;
+        }
+        nav a:hover {
+            color: #cceeff; 
+        }
+        nav a.button {
+            background-color: #ffcc00; 
+            color: #333; 
+            padding: 10px 20px;
+            border-radius: 25px;
+            transition: background-color 0.3s ease, color 0.3s ease;
+        }
+        nav a.button:hover {
+            background-color: #ffd633; 
+        }
+        .content {
+            padding: 30px;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+        }
+        th, td {
+            border: 1px solid #999; 
+            padding: 10px 15px;
+            text-align: left;
+        }
+        th {
+            background-color: #0066cc;
+            color: #fff; 
+        }
+        tr:nth-child(even) {
+            background-color: #e6e6e6; 
+        }
+        .nav-links {
+            display: flex;
+            align-items: center;
+            justify-content: center; 
+            margin: 0;
+            padding: 0;
+            list-style: none;
+            width: 100%; 
+        }
+        .nav-links li {
+            margin-left: 20px; 
+        }
+        .nav-links a.button {
+            margin-left: auto; 
+        }
+    </style>
+</head>
+<body>
+   
+    <div class="content">
+        {% block content %}
+        {% endblock %}
+    </div>
+</body>
+</html>

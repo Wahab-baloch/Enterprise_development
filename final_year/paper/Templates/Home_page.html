@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    {% if blogs %}
+        <div class="content">
+            <table class="blog-table">
+                <thead>
+                    <tr>
+                        <th>Blog Title</th>
+                        <th>Blog Author</th>
+                        <th>Publication Date</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for blog in blogs %}
+                    <tr>
+                        <td>{{ blog.title }}</td>
+                        <td>{{ blog.author.name }}</td>
+                        <td>{{ blog.publication_date }}</td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    {% else %}
+        <div class="content">
+            <p>No blogs available.</p>
+        </div>
+    {% endif %}
+    <div class="content" style="margin-top: 20px;">
+        <a href="{% url 'addblog' %}" class="button">Add your Blogs</a>
+    </div>
+{% endblock %}
